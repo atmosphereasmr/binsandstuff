@@ -1,0 +1,152 @@
+@import url('https://fonts.googleapis.com/css?family=Germania+One|Open+Sans');
+
+.headerContainer {
+  background-color: #AB2A19;
+  width: 100vw;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  padding-left: 100px;
+}
+
+a {
+  text-decoration: none;
+  color: black;
+}
+
+.logo {
+  width: 40px;
+  height: 40px;
+  padding-left: 10px;
+}
+
+.testFont {
+  font-family: 'Open Sans', sans-serif;
+  font-family: 'Germania One', cursive;
+}
+
+.testFontWhite {
+  font-family: 'Open Sans', sans-serif;
+  font-family: 'Germania One', cursive;
+  color: white;
+}
+
+.homeContainer {
+  background-color: #FFB8AF;
+  width: 50%;
+  height: 300px;
+  margin: auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  flex-flow: column;
+  border-radius: 25px;
+  margin-top: 25px;
+}
+
+.homeBin {
+  background-color: #D34735;
+  width: 300px;
+  height: 50px;
+  display: flex;
+  border-radius: 25px;
+  justify-content: center;
+  align-items: center;
+  margin: auto;
+}
+
+.title {
+  color: white;
+  background-color: black;
+  width: 300px;
+  height: 50px;
+  border-radius: 25px;
+  margin: auto;
+  margin-top: 25px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+}
+
+.returnHome {
+  margin: auto;
+  margin-top: 25px;
+  background-color: black;
+  color: white;
+}
+
+.contentsContainer {
+  margin: auto;
+  width: 50%;
+  background-color: #FFB8AF;
+  height: 300px;
+  border-radius: 25px;
+  margin-top: 25px;
+  display: flex;
+  justify-content: flex-start;
+  flex-flow: row;
+}
+
+.contentsImage {
+  display: flex;
+  width: 300px;
+  height: 200px;
+}
+
+.contentsImage > img {
+  border-radius: 25px;
+}
+
+.contentsContainer2 {
+  width: 200px;
+  height: 25px;
+  border-radius: 25px;
+  display: flex;
+  justify-content: center;
+  flex-flow: column;
+  align-items: center;
+  padding-top: 25px;
+  padding-left: 25px;
+}
+
+.priceContainer {
+  width: 200px;
+  height: 20px;
+  justify-content: space-between;
+  flex-flow: row;
+  display: flex;
+  align-items: center;
+  padding-top: 25px;
+}
+
+.buttonContainer {
+  width: 200px;
+  height: 20px;
+  justify-content: space-between;
+  flex-flow: row;
+  display: flex;
+  align-items: center;
+  padding-top: 25px;
+}
+
+.buttonContainer > button {
+  width: 50px;
+  height: 20px;
+}
+
+.hvr-shrink {
+  display: inline-block;
+  vertical-align: middle;
+  -webkit-transform: perspective(1px) translateZ(0);
+  transform: perspective(1px) translateZ(0);
+  box-shadow: 0 0 1px transparent;
+  -webkit-transition-duration: 0.3s;
+  transition-duration: 0.3s;
+  -webkit-transition-property: transform;
+  transition-property: transform;
+}
+.hvr-shrink:hover, .hvr-shrink:focus, .hvr-shrink:active {
+  -webkit-transform: scale(0.9);
+  transform: scale(0.9);
+}
