@@ -12,9 +12,16 @@ export default class Contents extends Component {
     content: [],
     name: '',
     price: '',
-    id: ''
+    id: '',
+    disabled: true,
+    editButton: 'Edit'
   }
 }
+
+  componentWillReceiveProps(nextprops) {
+    console.log(nextprops)
+    this.setState({id: nextprops.id})
+  }
 
   saveContent() {
     console.log("Test")
@@ -27,6 +34,17 @@ export default class Contents extends Component {
 
   editContent() {
     console.log('I am running!')
+    var newEdit;
+    if(this.state.editButton === 'Edit')
+    {
+      newEdit = 'Done'
+    }
+    else
+    {
+      newEdit = 'Edit'
+    }
+    this.setState({disabled: this.state.disabled ? false : true})
+    this.setState({editButton: newEdit})
     axios.put(`http://localhost:3001/api/content/${this.state.id}`, {name: this.state.name, price: this.state.price}).then(response => {
       console.log(response)
     })
@@ -55,14 +73,14 @@ export default class Contents extends Component {
           <div className="contentsContainer2">
           <div className="priceContainer">
               <h4>Name:</h4>
-              <input onChange={(event) => this.eventHandlerName(event.target.value)} placeholder={this.props.name} />
+              <input onChange={(event) => this.eventHandlerName(event.target.value)} placeholder={this.props.name} disabled={this.state.disabled}/>
           </div>
           <div className="priceContainer">
             <h4>Price:</h4>
-            <input onChange={(event) => this.eventHandlerPrice(event.target.value)} placeholder={this.props.price}/>
+            <input onChange={(event) => this.eventHandlerPrice(event.target.value)} placeholder={this.props.price} disabled={this.state.disabled}/>
           </div>
           <div className="buttonContainer">
-            <button onClick={() => this.editContent()}>Edit</button>
+            <button onClick={() => this.editContent()}>{this.state.editButton}</button>
             <button onClick={() => this.saveContent()}>Save</button>
           </div>
         </div>

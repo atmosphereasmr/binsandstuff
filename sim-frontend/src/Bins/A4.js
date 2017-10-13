@@ -11,22 +11,25 @@ export default class A4 extends Component {
   this.state = {
     content: [],
     name: '',
-    price: ''
+    price: '',
+    id: ''
   }
 }
 
 componentDidMount () {
   axios.get('http://localhost:3001/api/content')
   .then(response => {
-    this.setState({ content: response.data, name: response.data[3].name, price: response.data[3].price })
+    this.setState({ content: response.data, name: response.data[3].name, price: response.data[3].price, id: response.data[3].contentid })
       console.log(response.data)
   })
 }
+
+
   render() {
     return (
       <div>
-        <Contents title="Bin A-4" imgurl={require('../Images/icecream.jpg')}
-        name={this.state.name} price={"$" + this.state.price} path='/shelves/A'/>
+        <Contents title="Bin A-4" imgurl={require('../Images/cake.jpg')}
+        name={this.state.name} price={"$" + this.state.price} path='/shelves/A' id={this.state.id}/>
       </div>
     )
   }

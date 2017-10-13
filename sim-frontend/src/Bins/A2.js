@@ -11,22 +11,25 @@ export default class A2 extends Component {
   this.state = {
     content: [],
     name: '',
-    price: ''
+    price: '',
+    id: ''
   }
 }
 
 componentDidMount () {
   axios.get('http://localhost:3001/api/content')
   .then(response => {
-    this.setState({ content: response.data, name: response.data[1].name, price: response.data[1].price })
+    this.setState({ content: response.data, name: response.data[1].name, price: response.data[1].price, id: response.data[1].contentid })
       console.log(response.data)
   })
 }
+
+
   render() {
     return (
       <div>
         <Contents title="Bin A-2" imgurl={require('../Images/cookies.jpg')}
-        name={this.state.name} price={"$" + this.state.price} path='/shelves/A'/>
+        name={this.state.name} price={"$" + this.state.price} path='/shelves/A' id={this.state.id}/>
       </div>
     )
   }

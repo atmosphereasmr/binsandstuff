@@ -1,1 +1,2 @@
-SELECT * FROM content;
+select * from content
+order by contentid ASC;
